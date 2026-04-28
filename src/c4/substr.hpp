@@ -2285,6 +2285,20 @@ inline OStream& operator<< (OStream& os, basic_substring<C> s)
 
 } // namespace c4
 
+ 
+namespace std {
+
+template<>
+struct hash<c4::csubstr>
+{
+    size_t operator() (c4::csubstr s) const noexcept
+    {
+        return std::hash<std::string_view>{}(std::string_view(s.str, s.len));
+    }
+};
+
+} // namespace std
+
 
 #ifdef __clang__
 #   pragma clang diagnostic pop
