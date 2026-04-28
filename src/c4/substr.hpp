@@ -554,6 +554,11 @@ public:
         }
         return npos;
     }
+    size_t rfind(const C c, size_t start_pos=npos) const
+    {
+        return last_of(c, start_pos);
+    }
+ 
 
 public:
 
