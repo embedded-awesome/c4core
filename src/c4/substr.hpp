@@ -6,6 +6,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <type_traits>
+#include <functional>
+#include <string_view>
 
 #include "c4/config.hpp"
 #include "c4/error.hpp"
